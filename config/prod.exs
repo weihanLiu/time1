@@ -10,7 +10,7 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :time1, Time1Web.Endpoint,
-  url: [host: "time1.weihan.space", port: 80],
+  url: [host: "time1.weihanliu.space", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
