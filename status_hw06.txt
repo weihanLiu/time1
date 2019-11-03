@@ -1,0 +1,38 @@
+
+Web Dev Fall 2019 HW06 Status
+
+Answer the following questions:
+
+
+1. What's your name?
+Weihan Liu
+
+
+2. What's the URL of the github repo with your work for this HW?
+https://github.com/weihanLiu/time1.git
+
+
+
+3. What's the version number of your github release?
+c712f010db25d7865c5820065e55d59206a8af89
+
+4. What's the URL that you deployed to?
+time1@weihanliu.space
+
+
+
+5. Is your app functionality complete? If not, what's missing?
+Everything except "cannot exceed 8 hours" constrain, and the "report to manager when exceed budge"
+
+
+6. Is your app properly deployed? If not, what went wrong?
+Yes
+
+
+
+
+
+And here's a list of tasks for grading comments. Just leave this here:
+ - Development
+ - Deployment
+ - Submission
