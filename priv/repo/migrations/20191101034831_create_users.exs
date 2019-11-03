@@ -6,6 +6,7 @@ defmodule Time1.Repo.Migrations.CreateUsers do
       add :email, :string, null: false
       add :name, :string, null: false
 
+
       timestamps()
     end
 

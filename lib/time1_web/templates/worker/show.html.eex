@@ -1,0 +1,30 @@
+<h1>Show Worker</h1>
+
+<ul>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @worker.email %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @worker.name %>
+  </li>
+
+  <li>
+    <strong>Manager:</strong>
+    <%= @worker.user.name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.worker_path(@conn, :edit, @worker) %></span>
+
+<%= if @current_user do %>
+    <span><%= link "Back", to: Routes.page_path(@conn, :manager_home, user_id: @current_user.id) %></span>
+<% end %>  
+  
+<%= if @current_worker do %>
+    <span><%= link "Back", to: Routes.page_path(@conn, :worker_home, worker_id: @current_worker.id) %></span>    
+<% end %>

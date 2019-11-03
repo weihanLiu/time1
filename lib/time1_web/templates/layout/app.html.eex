@@ -11,19 +11,32 @@
     <div class="container">
       <nav class="navbar navbar-expand-sm navbar-light bg-white">
         <div class="col-4">
-          <a class="navbar-brand" href="#">Lens</a>
+          <a class="navbar-brand" href="#">Timesheet System</a>
         </div>
-        <div class="col-8">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">All Photos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Your Photos</a>
-            </li>
-          </ul>
+
+
+        <div class="col-4">
+          <%= if @current_worker do %>
+            Worker: <%= @current_worker.name %>
+            (<%= link("Logout", to: Routes.session_path(@conn, :delete, position: "worker"), method: :delete) %>)
+          <% else %>
+            <%= if @current_user do %>
+              Manager: <%= @current_user.name %>
+              (<%= link("Logout", to: Routes.session_path(@conn, :delete, position: "manager"), method: :delete) %>)
+            <% else %>
+              <p><%= link("Worker Login", to: Routes.session_path(@conn, :new, position: "worker")) %></p>
+              <p><%= link("Manager Login", to: Routes.session_path(@conn, :new, position: "manager")) %></p>
+            <% end %>
+          <% end %>
         </div>
+        <div class="col-4">
+        <%= link("Register(Manager)", to: Routes.user_path(@conn, :new)) %>
+        </div>>
+      
+        
       </nav>
+
+      
 
       <div class="row">
         <div class="col-12">

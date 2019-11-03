@@ -1,0 +1,35 @@
+<h1>Show Timesheet</h1>
+
+<ul>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @timesheet.date %>
+  </li>
+
+  <li>
+    <strong>Approved:</strong>
+    <%= @timesheet.approved %>
+  </li>
+
+  <li>
+    <strong>Worker:</strong>
+    <%= @timesheet.worker.name %>
+  </li>
+
+</ul>
+<h2>Tasks</h2>
+
+<p><%= link("Add New Tasks", to: Routes.task_path(@conn, :new, %{"timesheet_id": @timesheet.id})) %></p>
+
+ <div class="row">
+  <%= for task <- @timesheet.tasks do %>
+    <ul>
+    <li>Job <%= task.job.name %></li>
+    <li>Hour: <%= task.hour %></li>
+    <li>Note: <%= task.note %></li>
+    </ul>
+  <%= end %>  
+</div>
+
+<span><%= link "Back", to: Routes.page_path(@conn, :worker_home, worker_id: @current_worker.id) %></span>

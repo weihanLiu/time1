@@ -1,0 +1,3 @@
+<h2>Approved!</h2>
+
+<span><%= link "Back", to: Routes.page_path(@conn, :manager_home, user_id: @current_user.id) %></span>

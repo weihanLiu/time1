@@ -1,0 +1,32 @@
+<h1>Hey <%= @worker.name %></h1>
+<h2>Personal Info</h2>
+<ul>
+  <li>
+    <strong>Email:</strong>
+    <%= @worker.email %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @worker.name %>
+  </li>
+
+</ul>
+<p>
+  <span><%= link "Edit", to: Routes.worker_path(@conn, :edit, @worker) %></span>
+</p>
+
+<h2>Timesheets</h2>
+<p><%= link("Add New Timesheet", to: Routes.timesheet_path(@conn, :new)) %></p>
+ <div class="row">
+    <%= for timesheet <- @worker.timesheets do %>
+    <ul>
+    <li>timesheet id: <%= timesheet.id %></li>
+    <li>Date: <%= timesheet.date %></li>
+    <li>Approved: <%= timesheet.approved %></li>
+    <span><%= link "View", to: Routes.timesheet_path(@conn, :showW, %{"id": timesheet.id}) %></span>
+    <span><%= link "Edit", to: Routes.timesheet_path(@conn, :edit, timesheet.id) %></span>
+    </ul>
+    <% end %>   
+</div>
+

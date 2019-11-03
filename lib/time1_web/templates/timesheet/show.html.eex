@@ -1,0 +1,19 @@
+<h1>Show Timesheet</h1>
+
+<ul>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @timesheet.date %>
+  </li>
+
+  <li>
+    <strong>Approved:</strong>
+    <%= @timesheet.approved %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.timesheet_path(@conn, :edit, @timesheet) %></span>
+<span><%= link "Back", to: Routes.page_path(@conn, :worker_home, worker_id: @current_worker.id) %></span>
+
